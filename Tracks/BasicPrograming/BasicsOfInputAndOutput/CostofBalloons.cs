@@ -48,7 +48,6 @@ Ouput
 // Write your code here
 using System;
 
-
 class Program
 {
     public static void Main(string[] args)
@@ -57,13 +56,12 @@ class Program
         //test case
         int t = Int32.Parse(Console.ReadLine());
 
+        //variable for operations
         while (t != 0)
         {
             t--;
-            //variable for operations
             int result1, result2;
             result1 = result2 = 0;
-
             //cost
             string[] bandp = (Console.ReadLine()).Split(' ');
 
@@ -75,24 +73,25 @@ class Program
             string[] arrElement = new string[arrSize];
 
             //create input array       
-            string[,] inputArr = new string[arrSize, 2];
+            // string[,] inputArr = new string[arrSize, 2];
 
+            //  for (int i = 0; i < arrSize; i++)
+            // {
+            //arrElement[i] = Console.ReadLine().Split(' ');
+
+            // for (int j = 0; j < 2; j++)
+            // {
+            //     inputArr[i, j] = arrElement[i].Split(' ')[j];
+            // }
+            // }
             for (int i = 0; i < arrSize; i++)
             {
-                arrElement[i] = Console.ReadLine();
-
-                for (int j = 0; j < 2; j++)
-                {
-                    inputArr[i, j] = arrElement[i].Split(' ')[j];
-                }
-            }
-            for (int j = 0; j < arrSize; j++)
-            {
                 //Console.WriteLine("{0}", inputArr[j,i]);
-                if (inputArr[j, 0].Equals("1"))
+                arrElement = Console.ReadLine().Split(' ');
+                if (arrElement[0].Equals("1"))
                 { result1++; }
 
-                if (inputArr[j, 1].Equals("1"))
+                if (arrElement[1].Equals("1"))
                 { result2++; }
             }
             int total1 = (result1 * blue) + (result2 * purple);
@@ -101,4 +100,3 @@ class Program
         }
     }
 }
-
